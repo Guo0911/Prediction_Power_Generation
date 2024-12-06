@@ -1,0 +1,28 @@
+# Anaconda version 22.9.0 (Windows 11)
+# Python version 3.10.14 (Kaggle 2024.12.04)
+
+# Create a new environment
+# conda create -n aicup2024 python==3.10.14 --y
+# conda activate aicup2024
+
+# Install all packages for new environment
+# pip install -r requirements.txt
+
+# Unable to train model if using numpy 2.0.2
+numpy==1.26.4
+
+# Web Crawler
+requests==2.32.3
+pandas==2.2.3
+tqdm==4.66.4
+bs4==0.0.2
+openpyxl==3.1.5
+
+# Create training set and testset
+pvlib==0.11.1
+
+# LightGBM model
+lightgbm==4.2.0
+scikit-learn==1.2.2
+matplotlib==3.7.5
+pyopenssl==24.0.0
