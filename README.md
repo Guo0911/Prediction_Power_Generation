@@ -30,7 +30,7 @@
 本次參賽除競賽提供的原始資料外，也另外擴充氣候觀測站資料<sup>[1]</sup>及 pvlib 套件<sup>[2]</sup>計算的太陽與輻射量特徵，下表為競賽期間使用的訓練集範例。由於 pvlib 的計算時間較長，因此提供[完整資料集下載連結](https://drive.google.com/file/d/1pwjorwPr3oMVKrbUFIHCWNZsIAzAkoBj/view?usp=sharing)，解壓縮後覆蓋原先的 `data` 資料夾即可。
 
 
-| LocationCode | DateTime       | WindSpeed(m/s) | Pressure(hpa) | Temperature(簞C) | Humidity(%) | Sunlight(Lux) | Power(mW) | lat     | lon      | direction | pres_cwb | temp_cwb | rh_cwb | precp_cwb | rad_cwb | sun_cwb | visb_cwb | uvi_cwb | cloud_cwb | apparent_zenith | zenith      | apparent_elevation | elevation   | azimuth     | ghi         | dni         | dhi         | num_of_min | day_of_year | month | day | hour | min | hour_sin    | hour_cos      |
+| LocationCode | DateTime       | WindSpeed(m/s) | Pressure(hpa) | Temperature(℃) | Humidity(%) | Sunlight(Lux) | Power(mW) | lat     | lon      | direction | pres_cwb | temp_cwb | rh_cwb | precp_cwb | rad_cwb | sun_cwb | visb_cwb | uvi_cwb | cloud_cwb | apparent_zenith | zenith      | apparent_elevation | elevation   | azimuth     | ghi         | dni         | dhi         | num_of_min | day_of_year | month | day | hour | min | hour_sin    | hour_cos      |
 |--------------|----------------|----------------|---------------|-----------------|-------------|---------------|-----------|---------|----------|-----------|----------|----------|--------|-----------|---------|---------|----------|---------|-----------|-----------------|-------------|--------------------|-------------|-------------|-------------|-------------|-------------|------------|-------------|-------|-----|------|-----|-------------|---------------|
 | 1            | 2024/1/1 10:58 | 0              | 1017.58       | 18.4            | 95          | 8361.67       | 14.66     | 23.8994 | 121.5444 | 181       | 976.3    | 14.7     | 90     | 0         | 0.2     | 0       | 12       | 1.61    | 10        | 49.07593769     | 49.07612268 | 40.92406231        | 40.92387732 | 161.9850634 | 673.0227681 | 881.9232636 | 95.31169172 | 658        | 1           | 1     | 1   | 10   | 58  | 0.5         | -0.866025404  |
 | 1            | 2024/1/1 10:59 | 0              | 1017.55       | 18.4            | 95.7        | 8720          | 16.08     | 23.8994 | 121.5444 | 181       | 976.3    | 14.7     | 90     | 0         | 0.2     | 0       | 12       | 1.61    | 10        | 49.00577101     | 49.00595554 | 40.99422899        | 40.99404446 | 162.2750712 | 674.1364679 | 882.2701296 | 95.38223326 | 659        | 1           | 1     | 1   | 10   | 59  | 0.5         | -0.866025404  |
@@ -72,7 +72,7 @@ python web_crawler_for_CWB.py
 程式的執行過程可參考 `notebook/[AI CUP] Web crawler for CWB.ipynb` 或 [Kaggle 執行紀錄](https://www.kaggle.com/code/guojhihrong/ai-cup-web-crawler-for-cwb)
 
 ### Step 6. 創建訓練集和測試集 (執行時間約 5 ~ 10 小時<sup>*</sup>，依照設備而定)
-<sup>*</sup>此步驟會使用 `pvlib` 套件計算太陽和輻射量特徵，因此耗時較久，建議直接透過[連結](https://drive.google.com/file/d/1pwjorwPr3oMVKrbUFIHCWNZsIAzAkoBj/view?usp=sharing)下載完整資料集並覆蓋 `data` 資料夾
+<sup>*</sup>此步驟會使用 pvlib 套件計算太陽和輻射量特徵，因此耗時較久，建議直接透過[連結](https://drive.google.com/file/d/1pwjorwPr3oMVKrbUFIHCWNZsIAzAkoBj/view?usp=sharing)下載完整資料集並覆蓋 `data` 資料夾
 
 ```bash
 python create_training_dataset.py
